@@ -4,7 +4,7 @@ GNSSHub is an open-source platform for managing GNSS RTK base stations.
 
 It enables Raspberry Pi based GNSS receivers such as the Unicore UM980 to operate as professional RTK reference stations while providing modern monitoring, management and NTRIP services.
 
-## Features
+## Planned Features
 
 - RTK Base Station
 - NTRIP Caster
