@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/GNSSHub.Agent/GNSSHub.Agent.csproj" />
+    <Project Path="src/GNSSHub.Core/GNSSHub.Core.csproj" />
+    <Project Path="src/GNSSHub.Protocols/GNSSHub.Protocols.csproj" />
+  </Folder>
+</Solution>

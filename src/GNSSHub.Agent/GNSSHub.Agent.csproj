@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-GNSSHub.Agent-26141177-9268-4bac-bded-6719ba75e0b8</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GNSSHub.Protocols\GNSSHub.Protocols.csproj" />
+    <ProjectReference Include="..\GNSSHub.Core\GNSSHub.Core.csproj" />
+  </ItemGroup>
+</Project>
