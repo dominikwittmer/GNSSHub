@@ -1,15 +1,22 @@
-using System.Net.Sockets;
+using GNSSHub.Agent.Inputs;
+using GNSSHub.Agent.Options;
 using GNSSHub.Protocols;
+using Microsoft.Extensions.Options;
+using System.Net.Sockets;
 
 namespace GNSSHub.Agent;
 
 public sealed class Worker : BackgroundService
 {
     private readonly ILogger<Worker> _logger;
+    private readonly GnssInputFactory _inputFactory;
 
-    public Worker(ILogger<Worker> logger)
+    public Worker(
+        ILogger<Worker> logger,
+        GnssInputFactory inputFactory)
     {
         _logger = logger;
+        _inputFactory = inputFactory;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -18,15 +25,12 @@ public sealed class Worker : BackgroundService
         {
             try
             {
-                using var client = new TcpClient();
+                await using var input = _inputFactory.Create();
 
-                _logger.LogInformation("Connecting to RTKBase RTCM stream at 127.0.0.1:5015...");
-                await client.ConnectAsync("127.0.0.1", 5015, stoppingToken);
+                _logger.LogInformation("Opening GNSS input...");
+                await using var stream = await input.OpenReadStreamAsync(stoppingToken);
 
-                _logger.LogInformation("Connected.");
-
-                await using var stream = client.GetStream();
-
+                _logger.LogInformation("GNSS input opened.");
                 var reader = new Rtcm3PacketReader(stream);
 
                 long packets = 0;
