@@ -19,6 +19,7 @@ namespace GNSSHub.Agent.Inputs
             return _options.Input.Type.ToLowerInvariant() switch
             {
                 "tcp" => new TcpGnssInput(_options.Input),
+                "serial" => new SerialGnssInput(_options.Input),
                 _ => throw new NotSupportedException($"Input type '{_options.Input.Type}' is not supported.")
             };
         }
