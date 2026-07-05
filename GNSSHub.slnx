@@ -3,5 +3,6 @@
     <Project Path="src/GNSSHub.Agent/GNSSHub.Agent.csproj" />
     <Project Path="src/GNSSHub.Core/GNSSHub.Core.csproj" />
     <Project Path="src/GNSSHub.Protocols/GNSSHub.Protocols.csproj" />
+    <Project Path="src/GNSSHub.Receivers/GNSSHub.Receivers.csproj" />
   </Folder>
 </Solution>

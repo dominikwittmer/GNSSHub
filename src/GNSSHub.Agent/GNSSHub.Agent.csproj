@@ -15,5 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\GNSSHub.Protocols\GNSSHub.Protocols.csproj" />
     <ProjectReference Include="..\GNSSHub.Core\GNSSHub.Core.csproj" />
+    <ProjectReference Include="..\GNSSHub.Receivers\GNSSHub.Receivers.csproj" />
   </ItemGroup>
 </Project>
