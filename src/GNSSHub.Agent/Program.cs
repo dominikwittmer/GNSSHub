@@ -1,6 +1,7 @@
 using GNSSHub.Agent;
 using GNSSHub.Agent.Inputs;
 using GNSSHub.Agent.Options;
+using GNSSHub.Receivers;
 
 var builder = Host.CreateApplicationBuilder(args);
 
